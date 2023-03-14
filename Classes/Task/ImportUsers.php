@@ -172,7 +172,7 @@ class ImportUsers extends \TYPO3\CMS\Scheduler\Task\AbstractTask
 
                             // Import the user using information from LDAP
                             $restoreBehaviour = $this->restoredUsersHandling;
-                            if (in_array($user['uid'], $disabledOrDeletedUserUids, true)) {
+                            if (key_exists('uid, $user) && in_array($user['uid'], $disabledOrDeletedUserUids, true)) {
                                 // We disabled this user ourselves
                                 if ($this->missingUsersHandling === 'disable') {
                                     if ($restoreBehaviour === 'nothing') {
